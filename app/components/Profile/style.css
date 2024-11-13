@@ -1,0 +1,5 @@
+/* Menghapus ikon kalender pada input date */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none; /* Sembunyikan ikon kalender */
+}

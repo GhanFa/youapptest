@@ -25,24 +25,26 @@ const AboutForm = () => {
       </div>
       <form action="" className="flex flex-col gap-4">
         <div className="flex text-white text-opacity-35 items-center">
-          <label htmlFor="name" className="flex-1">
+          <label htmlFor="name" className="flex-1 text-sm">
             Display Name :
           </label>
           <input
             type="text"
+            name="name"
             placeholder="Enter Name"
-            className="w-2/3 px-5 py-4 text-sm text-white font-medium text-right bg-white/10 rounded-xl outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-3/5 px-5 py-[10px] text-sm text-white font-medium text-right bg-white/10 rounded-lg outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="flex text-white text-opacity-35 items-center">
-          <label htmlFor="name" className="flex-1">
+          <label htmlFor="gender" className="flex-1 text-sm">
             Gender
           </label>
           <Select>
-            <SelectTrigger className="w-2/3 rounded-xl text-white outline outline-1 outline-gray-600">
+            <SelectTrigger className="w-3/5 rounded-lg text-white outline outline-1 outline-gray-600">
               <SelectValue
                 placeholder="Select Gender"
                 className="text-gray-600"
+                name="gender"
               />
             </SelectTrigger>
             <SelectContent>
@@ -52,56 +54,61 @@ const AboutForm = () => {
           </Select>
         </div>
         <div className="flex text-white text-opacity-35 items-center">
-          <label htmlFor="name" className="flex-1">
+          <label htmlFor="birthday" className="flex-1 text-sm">
             Birthday :
           </label>
 
           <input
             type="date"
+            name="birthday"
             placeholder="DD-MM-YYYY"
-            className="w-2/3 px-4 py-4 text-sm text-white/50 font-medium text-right bg-white/10 rounded-xl outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-3/5 px-4 py-[10px] text-sm text-white/50 font-medium text-right bg-white/10 rounded-lg outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="flex text-white text-opacity-35 items-center">
-          <label htmlFor="name" className="flex-1">
+          <label htmlFor="horoscope" className="flex-1 text-sm">
             Horoscope :
           </label>
           <input
             type="text"
             placeholder="--"
+            name="horoscope"
             disabled
-            className="w-2/3 px-4 py-4 text-sm text-white font-medium text-right bg-white/10 rounded-xl outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-3/5 px-4 py-[10px] text-sm text-white font-medium text-right bg-white/10 rounded-lg outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="flex text-white text-opacity-35 items-center">
-          <label htmlFor="name" className="flex-1">
+          <label htmlFor="zodiac" className="flex-1 text-sm">
             Zodiac :
           </label>
           <input
             type="text"
             placeholder="--"
             disabled
-            className="w-2/3 px-4 py-4 text-sm text-white font-medium text-right bg-white/10 rounded-xl outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            name="zodiac"
+            className="w-3/5 px-4 py-[10px] text-sm text-white font-medium text-right bg-white/10 rounded-xl outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="flex text-white text-opacity-35 items-center">
-          <label htmlFor="name" className="flex-1">
+          <label htmlFor="height" className="flex-1 text-sm">
             Height :
           </label>
           <input
             type="text"
+            name="height"
             placeholder="Add height"
-            className=" w-2/3 px-4 py-4 text-sm text-white font-medium text-right bg-white/10 rounded-xl outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className=" w-3/5 px-4 py-[10px] text-sm text-white font-medium text-right bg-white/10 rounded-lg outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="flex text-white text-opacity-35 items-center">
-          <label htmlFor="name" className="flex-1">
+          <label htmlFor="weight" className="flex-1 text-sm">
             Weight :
           </label>
           <input
             type="text"
+            name="weight"
             placeholder="Add weight"
-            className=" w-2/3 px-4 py-4 text-sm text-white font-medium text-right bg-white/10 rounded-xl outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className=" w-3/5 px-4 py-[10px] text-sm text-white font-medium text-right bg-white/10 rounded-lg outline outline-1 outline-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
       </form>

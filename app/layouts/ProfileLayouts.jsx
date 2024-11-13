@@ -9,16 +9,16 @@ const ProfileLayouts = (props) => {
   const { children, username } = props;
   return (
     <>
-      <div className="w-full min-h-screen bg-[#09141a]">
-        <div className="w-full px-5 pt-20 flex justify-between items-center text-white content-top mb-[60px]">
+      <div className="flex flex-col w-full min-h-screen bg-[#09141a]">
+        <div className="sticky top-0 z-10 bg-[#09141a] md:w-2/5 mx-auto  shadow w-full px-5 pt-20 pb-3 flex justify-between items-center text-white content-top">
           <Link
             href="/"
-            className="flex items-center text-sm font-bold   hover:text-white"
+            className="flex items-center text-sm font-boldhover:text-white"
           >
             <FaAngleLeft className="mr-1" />
             Back
           </Link>
-          <div className="email text-sm font-semibold">{username}</div>
+          <div className="email text-sm font-semibold">@{username}</div>
           <button className="setting ">
             <svg
               width="22"
@@ -56,7 +56,7 @@ const ProfileLayouts = (props) => {
             </svg>
           </button>
         </div>
-        <div className="w-full md:w-2/5 mx-auto px-2 flex flex-col gap-6">
+        <div className="flex-1 overflow-y-auto w-full md:w-2/5 mx-auto px-2 flex flex-col gap-6 mt-7">
           <div className="w-full h-48 mx-auto bg-[#162329] rounded-2xl flex flex-col justify-between p-3">
             <button className="icon self-end hover:opacity-50 ">
               <BiEditAlt color="white" size={25} />
@@ -64,7 +64,7 @@ const ProfileLayouts = (props) => {
             <div className="username font-bold text-white">{username},</div>
           </div>
           <AboutForm />
-          <div className="w-full min-h-[120px] mx-auto bg-[#0e191f] rounded-2xl flex flex-col gap-3 ps-7 pe-3 py-3">
+          <div className="w-full min-h-[120px] mx-auto bg-[#0e191f] rounded-2xl flex flex-col gap-3 ps-7 pe-3 py-3 mb-7">
             <div className="flex justify-between">
               <div className="title font-bold text-white text-sm">Interest</div>
               <button className="icon self-end hover:opacity-50">

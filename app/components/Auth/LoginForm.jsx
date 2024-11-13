@@ -11,14 +11,7 @@ const LoginForm = () => {
       password: e.target.password.value,
     };
 
-    fetchLogin(data, (status, res) => {
-      if (status) {
-        // localStorage.setItem("token", res.access_token);
-        console.log(res.data);
-      } else {
-        console.log(res.response?.data?.message[0]);
-      }
-    });
+    fetchLogin(data);
   };
 
   return (
@@ -49,7 +42,7 @@ const LoginForm = () => {
         <div className="relative">
           <button
             type="submit"
-            className="w-full py-4 font-bold text-base text-white bg-gradient-to-r from-green-400  to-blue-500 rounded-lg shadow-md disabled:opacity-50 hover:bg-blue-600"
+            className="w-full py-4 font-bold text-base text-white bg-gradient-to-r from-green-400  to-blue-500 rounded-lg shadow-md transition duration-300 disabled:opacity-50 hover:shadow-lg hover:bg-gradient-to-r hover:to-green-300  hover:from-blue-500  "
           >
             Login
           </button>

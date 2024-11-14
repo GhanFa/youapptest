@@ -9,7 +9,7 @@ const AuthLayouts = (props) => {
       <div className="w-full min-h-screen bg-form-gradient">
         <div className="w-full max-w-sm px-5 pt-20">
           <Link
-            href="/"
+            href="./"
             className="flex items-center text-sm font-bold mb-[60px] text-white hover:text-white"
           >
             <FaAngleLeft className="mr-2" />

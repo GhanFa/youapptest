@@ -1,8 +1,25 @@
 "use client";
 import { fetchRegister } from "@/lib/auth";
 import PasswordInput from "./PasswordInput";
+import { useState } from "react";
 
 const RegisterForm = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [isDisabled, setIsDisabled] = useState(true);
+  const handleInputChange = (event) => {
+    const value = event.target.value;
+
+    setInputValue(value);
+
+    // Validasi: aktifkan tombol jika input tidak kosong
+
+    if (value.trim().length > 0) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+    }
+  };
+
   const handleRegister = (e) => {
     e.preventDefault();
     const password = e.target.password.value;
@@ -31,7 +48,7 @@ const RegisterForm = () => {
 
   return (
     <>
-      <form onSubmit={handleRegister} className="flex flex-col gap-8">
+      <form onSubmit={handleRegister} className="flex flex-col gap-8 mb-5">
         <div className="space-y-5">
           <div>
             <input
@@ -40,6 +57,8 @@ const RegisterForm = () => {
               className="w-full px-4 py-4 text-sm text-white bg-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
               name="email"
+              value={inputValue}
+              onChange={handleInputChange}
             />
           </div>
           <div>
@@ -61,6 +80,7 @@ const RegisterForm = () => {
         <div className="relative">
           <button
             onClick={() => {}}
+            disabled={isDisabled}
             className="w-full py-4 font-bold text-base text-white bg-gradient-to-r from-green-400  to-blue-500 rounded-lg shadow-md disabled:opacity-50 hover:bg-blue-600"
           >
             Register

@@ -6,17 +6,17 @@ const AuthLayouts = (props) => {
   const { children, title } = props;
   return (
     <>
-      <div className="w-full min-h-screen bg-form-gradient">
-        <div className="w-full max-w-sm px-5 pt-20">
+      <div className="w-full min-h-screen bg-form-gradient pb-7">
+        <div className="w-full md:w-4/5 lg:w-2/5 mx-auto px-5 pt-20">
           <Link
-            href="/"
+            href="./"
             className="flex items-center text-sm font-bold mb-[60px] text-white hover:text-white"
           >
             <FaAngleLeft className="mr-2" />
             Back
           </Link>
         </div>
-        <div className="w-full md:w-2/5 mx-auto px-6 ">
+        <div className="w-full md:w-4/5 lg:w-2/5 mx-auto px-6 mb-6">
           <h2 className="text-2xl font-bold mb-6 text-white pl-2">{title}</h2>
           {children}
         </div>

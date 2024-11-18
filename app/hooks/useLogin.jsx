@@ -1,15 +1,21 @@
-import { getUsername } from "@/lib/auth";
+"use client";
+
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { getToken } from "@/lib/auth";
 
 export const useLogin = () => {
-  const [username, setUsername] = useState("");
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setUsername(getUsername(token));
-    } else window.location.href = "/";
-  }, []);
+    const token = getToken();
+    if (!token) {
+      router.push("/"); // Alihkan ke halaman login jika token tidak ada
+    } else {
+      setLoading(false); // Set loading false jika token valid
+    }
+  }, [router]);
 
-  return username;
+  if (loading) return null; // Jangan render halaman jika sedang memuat pengecekan token
 };

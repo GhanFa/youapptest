@@ -25,9 +25,10 @@ const LoginForm = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
+    const emailOrUsername = e.target.emailOrUsername.value;
     const data = {
-      email: e.target.email.value,
-      username: e.target.username.value,
+      email: emailOrUsername.includes("@") ? emailOrUsername : "",
+      username: emailOrUsername.includes("@") ? "" : emailOrUsername,
       password: e.target.password.value,
     };
 
@@ -57,22 +58,13 @@ const LoginForm = () => {
         <div className="space-y-5">
           <div>
             <input
-              type="email"
-              placeholder="Enter Email"
+              type="text"
+              placeholder="Enter Email or Username"
               className="w-full px-4 py-4 text-sm text-white bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
-              name="email"
+              name="emailOrUsername"
               value={inputValue}
               onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              placeholder="Enter Username"
-              className="w-full px-4 py-4 text-sm text-white bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-              name="username"
             />
           </div>
           <PasswordInput placeholder="Enter Password" name="password" />
